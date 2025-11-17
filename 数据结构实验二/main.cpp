@@ -14,8 +14,6 @@ int main(int argc, char* argv[])
         cout << "input numbers error!";
         exit(1);
     }
-    //string command(argv[1]), find(argv[2]);
-    //cout << argv[0] << " " << argv[1] << " " << find << endl;
     if (string(argv[1]) == "-d")//显示结果
     {
         string result_txt_path(string(argv[2]) + ".txt"), result_html_path(string(argv[2]) + ".html");
@@ -25,7 +23,7 @@ int main(int argc, char* argv[])
             cout << "can not open this document";
             return 1;
         }
-        /*system(result_html_path.c_str());*/
+        system(result_html_path.c_str());
 
         string data_txt_path;
         getline(result_txt, data_txt_path);
@@ -54,43 +52,6 @@ int main(int argc, char* argv[])
         data_txt.close();
         
         display_result(target_string, pattern_size, kmp_result);
-        //在命令行输出结果结束
-
-        /*ostringstream ss;
-        ss << result.rdbuf();
-        string output = ss.str();
-        for (int location = 0; location < output.size(); location++)
-        {
-            cout << output[location];
-        }*/
-
-
-        //int color = 0, result_location = 0;
-        //for (int i = 0; i < result.size(); i++)
-        //{
-        //    if (result_location != -1 && i == result[result_location])
-        //    {
-        //        color = find.size();
-        //        result_location++;
-        //        if (result_location == result.size())
-        //        {
-        //            result_location = -1;
-        //        }
-        //    }
-        //    if (color)
-        //    {
-        //        color--;
-        //        cout << "\033[43m";//黄色背景
-        //    }
-        //    else
-        //    {
-        //        cout << "\033[0m";//原背景
-        //    }
-        //    cout << result[i];
-        //}
-        //cout << "\033[0m";//原背景
-
-
 
         result_txt.close();
     }
